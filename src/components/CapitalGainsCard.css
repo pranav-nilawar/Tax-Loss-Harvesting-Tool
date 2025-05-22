@@ -1,0 +1,71 @@
+.capital-gains-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.pre-harvesting-card,
+.after-harvesting-card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.pre-harvesting-card {
+  background-color: #222; 
+  color: #eee;
+}
+
+.after-harvesting-card {
+  background-color: #1e88e5; 
+  color: #fff;
+}
+
+.gains-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.pre-harvesting-card .gains-row {
+  border-bottom-color: rgba(238, 238, 238, 0.1); 
+}
+
+.gains-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 15px;
+}
+
+.gains-row > span {
+  font-weight: bold;
+}
+
+.profit {
+  color: #4caf50; 
+}
+
+.loss {
+  color: #f44336; 
+}
+
+.net {
+  font-weight: bold;
+}
+
+.realised-gains,
+.effective-capital-gains {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.app-container.dark-mode .pre-harvesting-card {
+  color: #eee;
+}
+
+.app-container.dark-mode .after-harvesting-card {
+  color: #fff;
+}

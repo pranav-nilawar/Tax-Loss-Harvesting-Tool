@@ -1,70 +1,60 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tax Optimisation Tool
 
-## Available Scripts
+This project is a React-based tool to help visualize and understand the impact of tax-loss harvesting on capital gains. It displays your holdings, their potential short-term and long-term gains/losses, and allows you to simulate selling these holdings to see the after-harvesting capital gains and potential tax savings.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+* **Pre Harvesting View:** Shows your initial capital gains (short-term and long-term profits and losses).
+* **Holdings Table:** Lists your assets with their holdings, current price, and potential short-term and long-term gains/losses.
+* **Selectable Holdings:** Allows you to select holdings to simulate selling them.
+* **Amount to Sell:** You can specify the amount of each selected holding you want to sell.
+* **After Harvesting View:** Displays the calculated capital gains after considering the simulated sales.
+* **Potential Savings:** Shows the potential tax savings based on the difference between pre and after harvesting capital gains.
+* **Loss Opportunity Highlighting:** Rows in the holdings table with potential losses are visually highlighted.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1.  **Clone the repository** (if you have one, otherwise just proceed to the next steps if you have the project files locally).
+    ```bash
+    git clone <repository-url>
+    cd <project-directory>
+    ```
 
-### `npm test`
+2.  **Install dependencies.**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3.  **Start the development server.**
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
 
-### `npm run build`
+    This will start the application in your browser, usually at `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Data
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application uses the following data files:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* `src/data/capitalGainsData.js`: Contains the initial pre-harvesting capital gains (short-term and long-term profits and losses).
+* `src/data/holdingsData.js`: Contains the data for your various holdings, including coin details, holding amounts, current prices, and potential gains/losses.
 
-### `npm run eject`
+You can modify these files to reflect your actual financial data.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* `src/App.js`: The main component that manages the state and logic for the application.
+* `src/components/CapitalGainsCard.js`: Displays the "Pre Harvesting" and "After Harvesting" capital gains information.
+* `src/components/HoldingsTable.js`: Renders the table of your holdings and allows for selection and specifying amounts to sell.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Functionality
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Selecting a holding in the table (by checking the checkbox) simulates selling that entire holding for tax-loss harvesting if no specific "Amount to Sell" is entered.
+* Entering an "Amount to Sell" for a selected holding calculates the after-harvesting gains based on that sold amount.
+* The "After Harvesting" section updates to reflect the impact of these simulated sales on your capital gains.
+* If the "After Harvesting" capital gains are lower than the "Pre Harvesting" gains, a message indicating potential savings is displayed.
